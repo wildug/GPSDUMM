@@ -22,13 +22,13 @@ public class GPSPrinter : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 40, 40), $"L: {locI.latitude} | L: {locI.longitude}", mystyle);
+        GUI.Label(new Rect(Screen.width / 3, Screen.height / 2, 40, 40), $"L: {locI.latitude} | L: {locI.longitude}", mystyle);
 
         int i = 0;
         foreach (string item in strs)
         {
             i++;
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 + i * 30, 1000, 30), item, mystyle);
+            GUI.Label(new Rect(Screen.width / 3, Screen.height / 2 + i * 30, 1000, 30), item, mystyle);
         }
     }
 
