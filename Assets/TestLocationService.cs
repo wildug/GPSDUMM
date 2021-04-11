@@ -11,7 +11,7 @@ public class TestLocationService : MonoBehaviour
     }
     IEnumerator LocationCoroutine()
     {
-        pr.AddMessage("BAzongus", 2);
+        pr.AddMessage("BAzongus", 3);
         // Uncomment if you want to test with Unity Remote
         /*#if UNITY_EDITOR
                 yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
@@ -27,14 +27,14 @@ public class TestLocationService : MonoBehaviour
         // First, check if user has location service enabled
         if (!UnityEngine.Input.location.isEnabledByUser) {
             // TODO Failure
-            Debug.LogFormat("Android and Location not enabled");
+            pr.AddMessage("Android and Location not enabled", 5);
             yield break;
         }
 
-#elif UNITY_IOS
+#elif UNITY_IOs
         if (!UnityEngine.Input.location.isEnabledByUser) {
             // TODO Failure
-            Debug.LogFormat("IOS and Location not enabled");
+            pr.AddMessage("IOS and Location not enabled", 5);
             yield break;
         }
 #endif
@@ -63,7 +63,7 @@ public class TestLocationService : MonoBehaviour
         if (maxWait < 1)
         {
             // TODO Failure
-            Debug.LogFormat("Timed out");
+            pr.AddMessage("Timed out", 5);
             yield break;
         }
 
@@ -71,19 +71,19 @@ public class TestLocationService : MonoBehaviour
         if (UnityEngine.Input.location.status != LocationServiceStatus.Running)
         {
             // TODO Failure
-            Debug.LogFormat("Unable to determine device location. Failed with status {0}", UnityEngine.Input.location.status);
+            pr.AddMessage("Unable to determine device location. Failed with status , UnityEngine.Input.location.status}", 5);
             yield break;
         }
         else
         {
-            Debug.LogFormat("Location service live. status {0}", UnityEngine.Input.location.status);
+            pr.AddMessage($"Location service live. status {UnityEngine.Input.location.status}", 5);
             // Access granted and location value could be retrieved
-            Debug.LogFormat("Location: "
+            pr.AddMessage("Location: "
                 + UnityEngine.Input.location.lastData.latitude + " "
                 + UnityEngine.Input.location.lastData.longitude + " "
                 + UnityEngine.Input.location.lastData.altitude + " "
                 + UnityEngine.Input.location.lastData.horizontalAccuracy + " "
-                + UnityEngine.Input.location.lastData.timestamp);
+                + UnityEngine.Input.location.lastData.timestamp, 5);
 
             var _latitude = UnityEngine.Input.location.lastData.latitude;
             var _longitude = UnityEngine.Input.location.lastData.longitude;
