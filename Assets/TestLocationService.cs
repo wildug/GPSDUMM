@@ -89,8 +89,5 @@ public class TestLocationService : MonoBehaviour
             var _longitude = UnityEngine.Input.location.lastData.longitude;
             // TODO success do something with location
         }
-
-        // Stop service if there is no need to query location updates continuously
-        UnityEngine.Input.location.Stop();
     }
 }
