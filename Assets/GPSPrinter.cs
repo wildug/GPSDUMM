@@ -13,10 +13,11 @@ public class GPSPrinter : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Input.location.status == LocationServiceStatus.Running)
+        if (Input.location.status == LocationServiceStatus.Running && locI.timestamp != Input.location.lastData.timestamp)
         {
             locI = Input.location.lastData;
             Debug.Log(Input.location.lastData);
+            AddMessage($"Update: {locI.timestamp}", 5);
         }
     }
 
