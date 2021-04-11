@@ -39,7 +39,7 @@ public class TestLocationService : MonoBehaviour
         }
 #endif
         // Start service before querying location
-        UnityEngine.Input.location.Start(500f, 500f);
+        UnityEngine.Input.location.Start(50f, 5f);
 
         // Wait until service initializes
         int maxWait = 15;
