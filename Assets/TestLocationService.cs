@@ -11,7 +11,7 @@ public class TestLocationService : MonoBehaviour
     }
     IEnumerator LocationCoroutine()
     {
-        pr.AddMessage("BAzongus", 3);
+        pr.AddMessage("Bazongus", 3);
         // Uncomment if you want to test with Unity Remote
         /*#if UNITY_EDITOR
                 yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
@@ -51,7 +51,7 @@ public class TestLocationService : MonoBehaviour
 
         // Editor has a bug which doesn't set the service status to Initializing. So extra wait in Editor.
 #if UNITY_EDITOR
-        int editorMaxWait = 15;
+        int editorMaxWait = 10;
         while (UnityEngine.Input.location.status == LocationServiceStatus.Stopped && editorMaxWait > 0)
         {
             yield return new WaitForSecondsRealtime(1);

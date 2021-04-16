@@ -155,6 +155,7 @@ MonoBehaviour:
   breitengrad: 0
   "l\xE4ngengrad": 0
   "gro\xDFeKugel": {fileID: 1838297143}
+  dist: 0
 --- !u!135 &258815797
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.93e-43, y: 1e-45, z: 4e-44, w: 1.1754944e-38}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -545,7 +546,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50ce644dfb99e734d869456048ba08d0, type: 2}
+  - {fileID: 2100000, guid: 9129bad9aad7f394aa91b2eb46de21c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
